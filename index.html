@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Vankata.tech Games</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+		<style>
+			body{
+				background-color: #f1f1f1;
+			}
+			canvas{
+				margin: auto;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1 style="width:100%; text-align:center; margin:3%;"><strong>Vankata.tech Games</strong></h1>
+			<nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
+				<a class="navbar-brand" href="#">Games</a>
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" onclick="switchGame('space-traveler')" target="_blank">Space Traveler</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" onclick="switchGame('car-racer')" target="_blank">Car Racer</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" onclick="switchGame('memory-game')" target="_blank">Memory Game</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" onclick="switchGame('tron')" target="_blank">Tron</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" onclick="switchGame('snake')" target="_blank">Snake</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" onclick="switchGame('shooter')" target="_blank">Shooter</a>
+					</li>
+				</ul>
+			</nav>
+			<div style="width:100%; text-align:center; margin-top:3%;">
+				<div style="margin-bottom:3%">
+					<div id="space-traveler" class="info">
+						This is a simulation game of a spaceship travelling into space, passing through an asteroid field. The view presents the cabin of the ship and the front window. The ship is navigated with the arrow keys (UP, DOWN, LEFT, RIGHT) and the user is notified of space collision with an asteroid as it occurs.
+					</div>
+					<div id="car-racer" class="info">
+						This is a standard car racer game, where the user should travel the furthest distance to acquire the most points. The road has three lanes which the player can switch using the mouse pointer. Using them, the player should avoid the upcoming obstacles that are also cars. As the player proceeds further, the number of obstacles increases and his, or hers, speed increases as well. When the player crashes, the game stops.
+					</div>
+					<div id="memory-game" class="info">
+						This is a memory game, testing the ability of the player to memorize the order of some colored cards in a table. The cards are initially flipped down with the white side up. The player can select two cards by clicking on them and they flip for a moment. If they are of the same color, they remain open and add to the score of the player. If they are different, they close shortly thereafter and the player should pick new cards again. The goal is to flip all cards with the minimum number of clicks.
+					</div>
+					<div id="tron" class="info">
+						This is a variation of the tron game with home menu and options. The player can select the color of the vehicle and the volume of the sound played when moving. To return to the home menu, the player should use the <em>Esc</em> button.
+					</div>
+					<div id="snake" class="info">
+						This is the very well-known snake game. The player starts as a short snake and should eat the apple (orange rectangle in that case), to increase his length. To goal of the game is to become of the greatest length without eating yourself, or crashing into the side walls.
+					</div>
+					<div id="shooter" class="info">
+						This is a variation of a shooter game where the player moves with the mouse pointer and shoots with <em>Space</em> to kill the upcoming enemies from above. If an enemy passes beneath the player, he, or she, loses lives. If an enemy hits the player, he, or she, also loses lives. If the player kills an enemy, he, or she, wins points. The player's weapon has a cooldown, so it cannot shoot bullets immediately after one another.
+					</div>
+				</div>
+				<iframe id="chosenGame" width="800" height="600"></iframe>
+			</div>
+			<script>
+				function switchGame(game){
+					$("#chosenGame").prop("src", game + "/start.html");
+					$("#chosenGame").focus();
+					$(".info").css("display","none");
+					console.log(game,"GAME");
+					$("#"+game).css("display","block");
+				}
+				$(document).ready(function(){
+					switchGame("space-traveler");
+				});
+			</script>
+		</div>
+	</body>
+</html>
+
