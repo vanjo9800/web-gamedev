@@ -62,7 +62,7 @@
 						This is the very well-known snake game. The player starts as a short snake and should eat the apple (orange rectangle in that case), to increase his length. To goal of the game is to become of the greatest length without eating yourself, or crashing into the side walls.
 					</div>
 					<div id="shooter" class="info">
-						This is a variation of a shooter game where the player moves with the mouse pointer and shoots with <em>Space</em> to kill the upcoming enemies from above. If an enemy passes beneath the player, he, or she, loses lives. If an enemy hits the player, he, or she, also loses lives. If the player kills an enemy, he, or she, wins points. The player's weapon has a cooldown, so it cannot shoot bullets immediately after one another.
+						This is a variation of a shooter game where the player moves with the <em>arrow keys</em> and shoots with <em>Space</em> to kill the upcoming enemies from above. If an enemy passes beneath the player, he, or she, loses lives. If an enemy hits the player, he, or she, also loses lives. If the player kills an enemy, he, or she, wins points. The player's weapon has a cooldown, so it cannot shoot bullets immediately after one another.
 					</div>
 				</div>
 				<iframe id="chosenGame" width="800" height="600"></iframe>
@@ -72,7 +72,6 @@
 					$("#chosenGame").prop("src", game + "/start.html");
 					$("#chosenGame").focus();
 					$(".info").css("display","none");
-					console.log(game,"GAME");
 					$("#"+game).css("display","block");
 				}
 				$(document).ready(function(){
